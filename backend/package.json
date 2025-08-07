@@ -1,0 +1,26 @@
+{
+  "name": "backend",
+  "module": "server.js",
+  "type": "module",
+  "private": true,
+  "main": "server.js",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "scripts": {
+    "start": "bun run server.js",
+    "dev": "bun --watch server.js"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "axios": "^1.11.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "jsdom": "^26.1.0"
+  },
+  "engines": {
+    "bun": ">=1.0.0"
+  }
+}

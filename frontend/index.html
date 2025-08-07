@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Product Scraper</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">
+                <span class="logo-icon">🛒</span>
+                Amazon Scraper
+            </h1>
+            <p class="subtitle">Encontre produtos da Amazon de forma rápida e fácil</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Search Section -->
+            <section class="search-section">
+                <div class="search-container">
+                    <div class="search-box">
+                        <input 
+                            type="text" 
+                            id="searchInput" 
+                            placeholder="Digite o nome do produto (ex: laptop, smartphone, livros...)"
+                            class="search-input"
+                            autocomplete="off"
+                        >
+                        <button id="searchBtn" class="search-btn">
+                            <span class="btn-text">Buscar Produtos</span>
+                            <span class="btn-loader" style="display: none;">
+                                <span class="loader"></span>
+                                Buscando...
+                            </span>
+                        </button>
+                    </div>
+                    <div class="search-tips">
+                        <p>💡 <strong>Dicas:</strong> Use termos específicos como "iPhone 13", "notebook gamer" ou "livros programação"</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section" id="resultsSection" style="display: none;">
+                <div class="results-header">
+                    <h2 id="resultsTitle">Resultados da Busca</h2>
+                    <div class="results-stats" id="resultsStats"></div>
+                </div>
+                <div class="products-grid" id="productsGrid"></div>
+            </section>
+
+            <!-- Loading Section -->
+            <section class="loading-section" id="loadingSection" style="display: none;">
+                <div class="loading-container">
+                    <div class="loading-spinner"></div>
+                    <h3>Buscando produtos na Amazon...</h3>
+                    <p>Isso pode levar alguns segundos. Por favor, aguarde.</p>
+                </div>
+            </section>
+
+            <!-- Error Section -->
+            <section class="error-section" id="errorSection" style="display: none;">
+                <div class="error-container">
+                    <div class="error-icon">⚠️</div>
+                    <h3>Oops! Algo deu errado</h3>
+                    <p id="errorMessage">Erro desconhecido</p>
+                    <button class="retry-btn" id="retryBtn">Tentar Novamente</button>
+                </div>
+            </section>
+
+            <!-- Empty State -->
+            <section class="empty-section" id="emptySection" style="display: none;">
+                <div class="empty-container">
+                    <div class="empty-icon">🔍</div>
+                    <h3>Nenhum produto encontrado</h3>
+                    <p>Tente buscar com termos diferentes ou mais específicos.</p>
+                    <div class="empty-suggestions">
+                        <p><strong>Sugestões:</strong></p>
+                        <button class="suggestion-btn" data-keyword="smartphone">📱 Smartphone</button>
+                        <button class="suggestion-btn" data-keyword="notebook">💻 Notebook</button>
+                        <button class="suggestion-btn" data-keyword="livros">📚 Livros</button>
+                        <button class="suggestion-btn" data-keyword="fone de ouvido">🎧 Fone de Ouvido</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Amazon Scraper - Projeto Educacional</p>
+            <p class="disclaimer">Este projeto é apenas para fins educacionais. Use responsavelmente.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
